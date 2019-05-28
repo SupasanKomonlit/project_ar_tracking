@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+    <name>project_ar_tracking</name>
+    <version>1.0.0</version>
+    <description>Test project hiveground</description>
+
+    <maintainer email="supasan.k@ku.th">Supasan Komonlit</maintainer>
+
+    <license>MIT</license>
+
+    <author>K.Supasan</author>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+</package>
