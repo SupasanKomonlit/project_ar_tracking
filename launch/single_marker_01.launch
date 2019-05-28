@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <node name="single_mark_01" pkg="ar_track_alvar" type="individualMarkersNoKinect" 
+            respawn="false" output="screen" >
+
+        <!--marker size(doube) is witdh in centimeters of one side of the black square -->
+        <param name="marker_size"           type="double" value="9"/>
+
+        <!--max_new_marker_error (double) A threshold determining when new markers can be
+            detected under uncertainty-->
+        <param name="max_new_marker_error"  type="double" value="0.08"/>
+
+        <!--max_track_error(double) A threshold deternion how much tracking error can be 
+            observedbefore an tag is considered to have disappeared-->
+        <param name="max_track_error"       type="double" value="0.2"/>
+
+        <!--camera_image(string) Topic of image to camera AR tags -->
+        <param name="camera_image"          type="string" value="/webcam_camera/image_raw"/>
+
+        <param name="output_frame"           type="string" value="/individual_marker"/>
+
+        <!--camera_info(string) Topic of info show information about camera_image -->
+        <remap from="camera_image" to="/webcam_camera/camera_info"/>
+
+        <remap from="camera_info" to="/torso_lift_link"/>
+
+    </node>
+
+</launch>
