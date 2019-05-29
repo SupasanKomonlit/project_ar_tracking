@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="cam_image_topic" default="/wide_stereo/left/image_color" />
+    <arg name="cam_info_topic" default="/wide_stereo/left/camera_info" />   
+
+    <arg name="cam_id" default="0">
+    <node name="camera" output="screen" pkg="cv_camera" type="cv_camera_node">
+        <param name="cv_camera/device_id" type="int" value="${cam_id}"/>
+    </node>
+
+</launch>
