@@ -106,7 +106,7 @@ int main( int argv , char** argc )
 
     // sleep for check process
     unsigned int count = 0;
-    while( nh.ok() && count < 60 )
+    while( nh.ok() && count < 30 )
     {
         count++;
         rate.sleep();
@@ -118,7 +118,7 @@ int main( int argv , char** argc )
         rate.sleep();
         if( updated )
         {
-            std::cout   << "Result distance is " << helper_sub.get_result();
+            std::cout   << "Result distance is " << helper_sub.get_result() << std::endl;
             updated = false;
         }
         ros::spinOnce();
