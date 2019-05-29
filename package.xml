@@ -16,4 +16,13 @@
 
     <exec_depend>message_runtime</exec_depend>
 
+    <build_depend>roscpp</build_depend>
+    <exec_depend>roscpp</exec_depend>
+
+    <build_depend>ar_track_alvar_msgs</build_depend>
+    <exec_depend>ar_track_alvar_msgs</exec_depend>
+
+    <build_depend>geometry_msgs</build_depend>
+    <exec_depend>geometry_msgs</exec_depend>
+
 </package>
