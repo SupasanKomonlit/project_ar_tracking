@@ -2,7 +2,7 @@
 
 <launch>
 
-    <node name="webcam_camera" output="screen" pkg="cv_camera" type="cv_camera_node">
+    <node name="camera" output="screen" pkg="cv_camera" type="cv_camera_node">
         <param name="cv_camera/device_id" type="int" value="0"/>
     </node>
 
