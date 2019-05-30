@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# File auto generate for looking and debug
+*.pdf
+*.gv
