@@ -25,6 +25,6 @@
     <arg name="model_frame" default="one_shape"/>
 
     <node pkg="tf" type="static_transform_publisher" 
-            name="$(arg model_frame)_to_ar_track_$(arg mark_id)"
-            args="0 0 0 0 0 0 1 ar_track_$(arg mark_id) $(arg model_frame) 100"/>
+            name="$(arg model_frame)_to_ar_marker_$(arg mark_id)"
+            args="0 0 0 0 0 0 1 ar_marker_$(arg mark_id) $(arg model_frame) 100"/>
 </launch>
