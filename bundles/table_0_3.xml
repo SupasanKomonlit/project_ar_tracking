@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- multimarker put number of you mark in one bundle -->
+<multimarker markers="2">
+
+    <!-- index is id of marker -->
+    <marker index="0" status="1">
+        <corner x="-5.05" y="-5.05" z="0"/>
+        <corner x="5.05" y="-5.05" z="0"/>
+        <corner x="5.05" y="5.05" z="0"/>
+        <corner x="-5.05" y="5.05" z="0"/>
+    </marker>
+
+    <marker index="3" status="1">
+        <corner x="-5.05" y="9.75" z="0"/>
+        <corner x="5.05" y="9.75" z="0"/>
+        <corner x="5.05" y="19.75" z="0"/>
+        <corner x="-5.05" y="19.75" z="0"/>
+    </marker>
+
+</multimarker>
