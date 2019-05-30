@@ -9,7 +9,7 @@
     <arg name="cam_node_name" value="camera"/>
 
     <!-- ABOUT ar_tracking --> 
-	<arg name="marker_size" value="4.4" />
+	<arg name="marker_size" value="11" />
 	<arg name="max_new_marker_error" value="0.08" />
 	<arg name="max_track_error" value="0.2" />
 	<arg name="output_frame" value="camera" />
