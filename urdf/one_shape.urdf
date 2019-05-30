@@ -2,13 +2,13 @@
 
 <robot name="myfirst">
 
-    <link name="camera">
+    <link name="one_shape">
 
         <visual>
 
             <geometry>
 
-                <cylinder length="0.6" radius="0.2"/>
+                <cylinder length="0.3" radius="0.1"/>
 
             </geometry>
 
