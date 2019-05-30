@@ -2,7 +2,7 @@
 
 <robot name="myfirst">
 
-    <link name="base_link">
+    <link name="camera">
 
         <visual>
 
