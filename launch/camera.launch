@@ -7,11 +7,14 @@
     <arg name="cam_image_topic" default="/camera/image" />
     <arg name="cam_info_topic" default="/camera/camera_info" />   
     <arg name="cam_node_name" default="camera"/>
+
     <node name="$(arg cam_node_name)" output="screen" pkg="cv_camera" type="cv_camera_node">
+
         <param name="cv_camera/device_id" type="int" value="$(arg cam_id)"/>
 
         <remap from="$(arg cam_node_name)/image_raw" to="$(arg cam_image_topic)"/>
         <remap from="$(arg cam_node_name)/camera_info" to="$(arg cam_info_topic)"/>
+
     </node>
 
 </launch>
