@@ -7,8 +7,9 @@
         
 	<arg name="cam_image_topic" default="/camera/image" />
 	<arg name="cam_info_topic" default="/camera/camera_info" />
+    <arg name="cam_node_name" default="camera"/>
         
-	<arg name="output_frame" default="camera" />
+	<arg name="output_frame" default="$(arg cam_node_name)" />
 	<arg name="bundle_files" default="$(find ar_track_alvar)/bundles/truthTableLeg.xml $(find ar_track_alvar)/bundles/table_8_9_10.xml" />
     <arg name="mark_id" default="8"/>
 
@@ -21,7 +22,7 @@
     <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)"/>
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
 
-    <arg name="model_frame" default="one_shape">
+    <arg name="model_frame" default="one_shape"/>
 
     <node pkg="tf" type="static_transform_publisher" 
             name="$(arg model_frame)_to_ar_track_$(arg mark_id)"
