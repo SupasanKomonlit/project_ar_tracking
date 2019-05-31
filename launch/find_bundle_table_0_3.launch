@@ -21,10 +21,12 @@
     <arg name="model_frame" value="base_rectangle"/>
 
     <include file="$(find project_ar_tracking)/launch/camera.launch">
+
         <arg name="cam_id" value="$(arg cam_id)"/>
         <arg name="cam_image_topic" value="$(arg cam_image_topic)"/>
         <arg name="cam_info_topic" value="$(arg cam_info_topic)"/>
         <arg name="cam_node_name" value="$(arg cam_node_name)"/>
+
     </include>
 
 
