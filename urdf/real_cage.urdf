@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+
+<robot name="cage">
+
+    <material name="blue">
+        <color rgba="0 0.15 1 0.6"/>
+    </material>
+
+    <material name="teal">
+        <color rgba="0 0.50 0.50 0.9"/>
+    </material>
+
+    <material name="red">
+        <color rgba="1 0 0 1"/>
+    </material>
+
+    <material name="yellow">
+        <color rgba="1 1 0.20 0.8"/>
+    </material>
+
+    <material name="purple">
+        <color rgba="0.5 0 0.5 0.8"/>
+    </material>
+
+    <!--This link we front-top of cage -->
+    <link name="base_cage" >
+
+        <visual>
+
+            <geometry>
+                <cylinder length="2" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="1.57075 0 0" xyz="0 0 0"/>
+
+            <material name="blue"/>    
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_front_left">
+
+        <visual>
+
+            <geometry>
+                <cylinder length="1" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+
+            <material name="teal"/>
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_front_right">
+
+        <visual>
+
+            <geometry>
+                <cylinder length="1" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+
+            <material name="teal"/>
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_front_bottom">
+
+        <visual>
+
+            <geometry>
+                <cylinder length="2" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="1.57075 0 0" xyz="0 0 0"/>
+
+            <material name="blue"/>
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_beside_left_top">
+        
+        <visual>
+
+            <geometry>
+                <cylinder length="2" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="0 1.57075 0" xyz="0 0 0"/>
+
+            <material name="red"/>
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_beside_left_bottom">
+        
+        <visual>
+
+            <geometry>
+                <cylinder length="2" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="0 1.57075 0" xyz="0 0 0"/>
+
+            <material name="red"/>
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_beside_right_top">
+        
+        <visual>
+
+            <geometry>
+                <cylinder length="2" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="0 1.57075 0" xyz="0 0 0"/>
+
+            <material name="red"/>
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_beside_right_bottom">
+        
+        <visual>
+
+            <geometry>
+                <cylinder length="2" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="0 1.57075 0" xyz="0 0 0"/>
+
+            <material name="red"/>
+
+        </visual>
+
+    </link>
+
+    <!-- Back side -->
+    <link name="base_cage_back" >
+
+        <visual>
+
+            <geometry>
+                <cylinder length="2" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="1.57075 0 0" xyz="0 0 0"/>
+
+            <material name="purple"/>    
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_back_left">
+
+        <visual>
+
+            <geometry>
+                <cylinder length="1" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+
+            <material name="teal"/>
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_back_right">
+
+        <visual>
+
+            <geometry>
+                <cylinder length="1" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+
+            <material name="teal"/>
+
+        </visual>
+
+    </link>
+
+    <link name="base_cage_back_bottom">
+
+        <visual>
+
+            <geometry>
+                <cylinder length="2" radius="0.02"/>
+            </geometry>
+
+            <origin rpy="1.57075 0 0" xyz="0 0 0"/>
+
+            <material name="purple"/>
+
+        </visual>
+
+    </link>
+    <!-- THIS IS JOINT PART -->
+    <joint name="front_top_left" type="fixed">
+        <parent link="base_cage"/>
+        <child link="base_cage_front_left"/>
+        <origin xyz="0 -1 -0.5"/>     
+    </joint>
+
+    <joint name="front_top_right" type="fixed">
+        <parent link="base_cage"/>
+        <child link="base_cage_front_right"/>
+        <origin xyz="0 1 -0.5"/>     
+    </joint>
+    
+    <joint name="front_top_bottom" type="fixed">
+        <parent link="base_cage"/>
+        <child link="base_cage_front_bottom"/>
+        <origin xyz="0 0 -0.6"/>     
+    </joint>
+
+    <joint name="beside_left_top" type="fixed">
+        <parent link="base_cage"/>
+        <child link="base_cage_beside_left_top"/>
+        <origin xyz="-1 -1 0"/>
+    </joint>
+
+    <joint name="beside_left_bottom" type="fixed">
+        <parent link="base_cage"/>
+        <child link="base_cage_beside_left_bottom"/>
+        <origin xyz="-1 -1 -1"/>
+    </joint>
+
+    <joint name="beside_right_top" type="fixed">
+        <parent link="base_cage"/>
+        <child link="base_cage_beside_right_top"/>
+        <origin xyz="-1 1 0"/>
+    </joint>
+
+    <joint name="beside_right_bottom" type="fixed">
+        <parent link="base_cage"/>
+        <child link="base_cage_beside_right_bottom"/>
+        <origin xyz="-1 1 -1"/>
+    </joint>
+
+    <joint name="front_to_back" type="fixed">
+        <parent link="base_cage"/>
+        <child link="base_cage_back"/>
+        <origin xyz="-2 0 0"/>
+    </joint>
+
+    <joint name="back_top_left" type="fixed">
+        <parent link="base_cage_back"/>
+        <child link="base_cage_back_left"/>
+        <origin xyz="0 -1 -0.5"/>     
+    </joint>
+
+    <joint name="back_top_right" type="fixed">
+        <parent link="base_cage_back"/>
+        <child link="base_cage_back_right"/>
+        <origin xyz="0 1 -0.5"/>     
+    </joint>
+    
+    <joint name="back_top_bottom" type="fixed">
+        <parent link="base_cage_back"/>
+        <child link="base_cage_back_bottom"/>
+        <origin xyz="0 0 -0.6"/>     
+    </joint>
+
+    <!-- This part of fill rectangle -->
+    <link name="fill_right">
+
+        <visual>
+
+            <geometry>
+                <box size="1.92 0.02 0.92"/>
+            </geometry>
+
+        </visual>
+
+        <origin rpy="0 0 1.57075" xyz="0 0 0"/>
+
+        <material color="yellow"/>
+
+    </link>
+
+    <link name="fill_left">
+
+        <visual>
+
+            <geometry>
+                <box size="1.92 0.02 0.92"/>
+            </geometry>
+
+        </visual>
+
+        <origin rpy="0 0 -1.57075" xyz="0 0 0"/>
+
+        <material color="yellow"/>
+
+    </link>
+
+    <joint name="fill_color_right" type="fixed">
+        <parent link="base_cage_beside_right_top"/>
+        <child link="fill_right"/>
+        <origin xyz="0 0 -0.5"/>
+    </joint>
+
+    <joint name="fill_color_left" type="fixed">
+        <parent link="base_cage_beside_left_top"/>
+        <child link="fill_left"/>
+        <origin xyz="0 0 -0.5"/>
+    </joint>
+
+</robot>
