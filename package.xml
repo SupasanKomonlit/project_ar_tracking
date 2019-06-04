@@ -25,4 +25,16 @@
     <build_depend>geometry_msgs</build_depend>
     <exec_depend>geometry_msgs</exec_depend>
 
+    <build_depend>opencv2</build_depend>
+    <exec_depend>opencv2</exec_depend>
+
+    <build_depend>rospy</build_depend>
+    <exec_depend>rospy</exec_depend>
+
+    <build_depend>cv_bridge</build_depend>
+    <exec_depend>cv_bridge</exec_depend>
+
+    <build_depend>sensor_msgs</build_depend>
+    <exec_depend>sensor_msgs</exec_depend>
+
 </package>
