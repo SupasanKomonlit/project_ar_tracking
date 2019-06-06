@@ -23,8 +23,8 @@ class PublishCameraInfo:
     def __init__( self ):
 
         self.name = rospy.get_name()
-        if( rospy.has_param( "name" ) ):
-            self.name = rospy.get_param( "name" )
+        if( rospy.has_param( "camera_node_name" ) ):
+            self.name = rospy.get_param( "camera_node_name" )
 
 
         self.full_path_yaml = ""
@@ -45,7 +45,7 @@ class PublishCameraInfo:
         yaml_data = load( yaml_file )
         yaml_file.close()
 
-        self.message.header.frame_id = yaml_data[ 'camera_name']
+        self.message.header.frame_id = self.name
         self.message.height = yaml_data[ 'image_height' ]
         self.message.width = yaml_data[ 'image_width' ]
         self.message.distortion_model = yaml_data[ 'distortion_model' ]

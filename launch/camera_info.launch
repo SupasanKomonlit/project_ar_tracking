@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="cam_node_name" default="rafin"/>
+    <arg name="yaml_file" default="$(find project_ar_tracking)/yaml/rafin_calibration.yaml"/>
+
+    <node pkg="project_ar_tracking" type="publish_camera_info.py" name="publish_camera_info">
+        <param name="cam_node_name" type="string" value="$(arg cam_node_name)"/>
+        <param name="yaml" type="string" value="$(arg yaml_file)"/>
+    </node>
+
+</launch>
