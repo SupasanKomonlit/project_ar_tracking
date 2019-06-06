@@ -22,13 +22,15 @@ from cv_bridge import CvBridge, CvBridgeError
 
 client = AdbClient( host="127.0.0.1" , port=5037 )
 
-device= client.device( "1a6dded2")
+device= client.device( "192.168.0.34:5555")
 
 rospy.init_node( "camera" , anonymous=False )
 
 bridge = CvBridge()
 
-pub_image = rospy.Publisher( "test_driver" , Image )
+pub_image = rospy.Publisher( "test_driver" , Image , queue_size=10 )
+
+count = 0
 
 while( not rospy.is_shutdown() ):
 
@@ -36,9 +38,16 @@ while( not rospy.is_shutdown() ):
 
     img = cv2.imdecode( numpy.array(img) , cv2.IMREAD_COLOR )
 
-    # img = cv2.resize( img , None , fx=0.1 , fy=0.1)
+    img = cv2.resize( img , None , fx=0.5 , fy=0.5)
 
-    pub_image.publish( bridge.cv2_to_imgmsg( img , "rgb8" ) )
-    print "pub image"
+    msg = bridge.cv2_to_imgmsg( img , "bgr8" )
+    
+    msg.header.stamp = rospy.get_time()
+    msg.header.frame_id = "rafin";
+
+    pub_image.publish( msg )
+    print "pub image sequence {}".format(count)
+    print img.shape
+    count += 1
 
     rospy.sleep( 0.05 )
