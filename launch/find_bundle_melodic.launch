@@ -10,21 +10,28 @@
     <arg name="cam_node_name" default="camera"/>
         
 	<arg name="output_frame" default="$(arg cam_node_name)" />
-	<arg name="bundle_files" default="$(find ar_track_alvar)/bundles/truthTableLeg.xml $(find ar_track_alvar)/bundles/table_8_9_10.xml" />
+	<arg name="bundle_files" 
+            default="$(find ar_track_alvar)/bundles/truthTableLeg.xml" />
     <arg name="mark_id" default="8"/>
 
 	<node name="ar_track_alvar" pkg="ar_track_alvar" type="findMarkerBundlesNoKinect" 
             respawn="false" output="screen" 
             args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame) $(arg bundle_files)" />
 
-    <arg name="model" default="$(find project_ar_tracking)/urdf/one_shape.urdf"/>
 
+    <!-- special case double pack -->
+    <arg name="model" default="$(find project_ar_tracking)/urdf/one_shape.urdf"/>
     <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)"/>
-    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="model_publish"/>
 
     <arg name="model_frame" default="one_shape"/>
 
     <node pkg="tf" type="static_transform_publisher" 
             name="$(arg model_frame)_to_ar_marker_$(arg mark_id)"
-            args="0 0 0 0 0 0 1 ar_marker_$(arg mark_id) $(arg model_frame) 100"/>
+            args="0 0 0 -1.5707963267948966 -1.5707963267948966 0 ar_marker_$(arg mark_id) base_marker 100"/>
+
+    <node pkg="tf" type="static_transform_publisher" 
+            name="base_to_$(arg model_frame)"
+            args="0.5 0 0 0 0 0 base_marker $(arg model_frame) 100"/>
+
 </launch>

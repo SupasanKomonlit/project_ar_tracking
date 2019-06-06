@@ -32,7 +32,7 @@ class PublishCameraInfo:
 
         self.message = CameraInfo()
 
-        topic_publish = '/' + self.name + '/camera_info'
+        topic_publish = '/' + self.camera_name + '/camera_info'
         self.publisher = rospy.Publisher( topic_publish , CameraInfo , queue_size = 10 )
 
     def set_full_path( self , full_path ):

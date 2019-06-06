@@ -2,11 +2,11 @@
 
 <launch>
 
-    <arg name="camera_name" default="rafin"/>
+    <arg name="camera_name" default="rayfin"/>
     <arg name="yaml_file" default="$(find project_ar_tracking)/yaml/rafin_calibration.yaml"/>
-
+    <remap from="$(arg camera_name)/image" to="$(arg camera_name)/image_raw"/>
     <node pkg="project_ar_tracking" type="publish_camera_info.py" name="publish_camera_info"
-            output="screen">
+            output="screen" respawn="true">
 
         <param name="camera_name" type="string" value="$(arg camera_name)"/>
         <param name="yaml" type="string" value="$(arg yaml_file)"/>
