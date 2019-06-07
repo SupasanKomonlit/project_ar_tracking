@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- ABOUT CAMERA --> 
+    <arg name="cam_image_topic" value="/rayfin/image" />
+    <arg name="cam_info_topic" value="/rayfin/camera_info" />   
+    <arg name="cam_node_name" value="rayfin_optical_frame"/>
+
+    <!-- ABOUT ar_tracking --> 
+	<arg name="marker_size" value="25" />
+	<arg name="max_new_marker_error" value="0.08" />
+	<arg name="max_track_error" value="0.2" />
+	<arg name="output_frame" value="rayfin_optical_frame" />
+	<arg name="bundle_files" value="$(find project_ar_tracking)/bundles/cage_06_07.xml" />
+
+    <!-- ABOUT model on rviz? -->
+    <arg name="model" value="$(find project_ar_tracking)/urdf/real_cage.urdf"/>
+    <arg name="mark_id" value="0"/>
+    <arg name="model_frame" value="base_cage"/>
+
+    <arg name="tf_linear" value="0 0 0.3"/>
+
+    <include file="$(find project_ar_tracking)/launch/find_bundle_melodic.launch">
+
+        <arg name="cam_image_topic" value="$(arg cam_image_topic)" />
+        <arg name="cam_info_topic" value="$(arg cam_info_topic)" />   
+        <arg name="cam_node_name" value="$(arg cam_node_name)"/>
+
+	    <arg name="marker_size" value="$(arg marker_size)" />
+	    <arg name="max_new_marker_error" value="$(arg max_new_marker_error)" />
+	    <arg name="max_track_error" value="$(arg max_track_error)" />
+	    <arg name="output_frame" value="$(arg output_frame)" />
+	    <arg name="bundle_files" value="$(arg bundle_files)" />
+
+        <arg name="model" value="$(arg model)"/>
+        <arg name="mark_id" value="$(arg mark_id)"/>
+        <arg name="model_frame" value="$(arg model_frame)"/>
+
+        <arg name="tf_linear" value="$(arg tf_linear)"/>
+
+    </include>
+
+</launch>
