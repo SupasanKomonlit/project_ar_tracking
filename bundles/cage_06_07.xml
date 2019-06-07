@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- multimarker put number of you mark in one bundle -->
+<multimarker markers="5">
+
+    <!-- index is id of marker -->
+
+    <!-- Ghost master masrker -->
+    <marker index="0" status="1">
+        <corner x="-13.5" y="-13.5" z="0"/>
+        <corner x="13.5" y="-13.5" z="0"/>
+        <corner x="13.5" y="13.5" z="0"/>
+        <corner x="-13.5" y="13.5" z="0"/>
+    </marker>
+
+    <marker index="2" status="1">
+        <corner x="-95" y="-61" z="0"/>
+        <corner x="-68" y="-61" z="0"/>
+        <corner x="-68" y="-34" z="0"/>
+        <corner x="-95" y="-34" z="0"/>
+    </marker>
+
+    <marker index="20" status="1">
+        <corner x="68" y="-61" z="0"/>
+        <corner x="95" y="-61" z="0"/>
+        <corner x="68" y="-34" z="0"/>
+        <corner x="95" y="-34" z="0"/>
+    </marker>
+
+    <marker index="35" status="1">
+        <corner x="-95" y="-61" z="-200"/>
+        <corner x="-68" y="-61" z="-200"/>
+        <corner x="-68" y="-34" z="-200"/>
+        <corner x="-95" y="-34" z="-200"/>
+    </marker>
+
+    <marker index="15" status="1">
+        <corner x="68" y="-61" z="-200"/>
+        <corner x="95" y="-61" z="-200"/>
+        <corner x="68" y="-34" z="-200"/>
+        <corner x="95" y="-34" z="-200"/>
+    </marker>
+
+</multimarker>
