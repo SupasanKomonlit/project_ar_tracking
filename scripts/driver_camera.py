@@ -36,7 +36,7 @@ count = 0
 
 while( not rospy.is_shutdown() ):
 
-    time_now = rospy.get_time()
+    time_now = rospy.get_rostime()
 
     img = device.screencap()
 
@@ -45,7 +45,8 @@ while( not rospy.is_shutdown() ):
     img = cv2.resize( img , None , fx=0.5 , fy=0.5)
 
     msg = bridge.cv2_to_imgmsg( img , "bgr8" )
-    
+   
+    print time_now 
     msg.header.stamp = time_now
     msg.header.frame_id = "rayfin_optical_frame"
 
