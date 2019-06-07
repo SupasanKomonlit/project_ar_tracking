@@ -28,11 +28,15 @@ rospy.init_node( "camera" , anonymous=False )
 
 bridge = CvBridge()
 
-pub_image = rospy.Publisher( "test_driver" , Image , queue_size=10 )
+pub_image = rospy.Publisher( "/rayfin/image" , Image , queue_size=10 )
 
 count = 0
 
+# 192.168.0.221
+
 while( not rospy.is_shutdown() ):
+
+    time_now = rospy.get_time()
 
     img = device.screencap()
 
@@ -42,12 +46,9 @@ while( not rospy.is_shutdown() ):
 
     msg = bridge.cv2_to_imgmsg( img , "bgr8" )
     
-    msg.header.stamp = rospy.get_time()
-    msg.header.frame_id = "rafin";
+    msg.header.stamp = time_now
+    msg.header.frame_id = "rayfin_optical_frame"
 
     pub_image.publish( msg )
-    print "pub image sequence {}".format(count)
-    print img.shape
-    count += 1
-
+    print "Send!"
     rospy.sleep( 0.05 )
