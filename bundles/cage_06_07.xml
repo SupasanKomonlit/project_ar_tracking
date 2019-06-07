@@ -20,7 +20,7 @@
         <corner x="-93" y="-34" z="0"/>
     </marker>
 
-    <marker index="20" status="1">
+    <marker index="30" status="1">
         <corner x="68" y="-59" z="0"/>
         <corner x="93" y="-59" z="0"/>
         <corner x="68" y="-34" z="0"/>
