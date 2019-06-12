@@ -2,8 +2,6 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="cage">
 
-    <xacro:property name="radius_of_cylinder" value="0.05"/>
-
     <material name="blue">
         <color rgba="0 0.15 1 0.6"/>
     </material>
@@ -27,6 +25,8 @@
     <!--This link we front-top of cage -->
     <link name="base_cage" >
 
+        <xacro:property name="radius_of_cylinder" value="0.05"/>
+
         <visual>
 
             <geometry>
@@ -46,7 +46,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="1" radius="${radius_of_cyliner}"/>
+                <cylinder length="1" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -62,7 +62,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="1" radius="${radius_of_cyliner}"/>
+                <cylinder length="1" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -78,7 +78,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="2" radius="${radius_of_cyliner}"/>
+                <cylinder length="2" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="1.57075 0 0" xyz="0 0 0"/>
@@ -94,7 +94,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="2" radius="${radius_of_cyliner}"/>
+                <cylinder length="2" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="0 1.57075 0" xyz="0 0 0"/>
@@ -110,7 +110,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="2" radius="${radius_of_cyliner}"/>
+                <cylinder length="2" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="0 1.57075 0" xyz="0 0 0"/>
@@ -126,7 +126,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="2" radius="${radius_of_cyliner}"/>
+                <cylinder length="2" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="0 1.57075 0" xyz="0 0 0"/>
@@ -142,7 +142,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="2" radius="${radius_of_cyliner}"/>
+                <cylinder length="2" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="0 1.57075 0" xyz="0 0 0"/>
@@ -159,7 +159,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="2" radius="${radius_of_cyliner}"/>
+                <cylinder length="2" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="1.57075 0 0" xyz="0 0 0"/>
@@ -175,7 +175,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="1" radius="${radius_of_cyliner}"/>
+                <cylinder length="1" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -191,7 +191,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="1" radius="${radius_of_cyliner}"/>
+                <cylinder length="1" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -207,7 +207,7 @@
         <visual>
 
             <geometry>
-                <cylinder length="2" radius="${radius_of_cyliner}"/>
+                <cylinder length="2" radius="${radius_of_cylinder}"/>
             </geometry>
 
             <origin rpy="1.57075 0 0" xyz="0 0 0"/>
