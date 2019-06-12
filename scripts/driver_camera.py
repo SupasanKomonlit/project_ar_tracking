@@ -32,7 +32,7 @@ pub_image = rospy.Publisher( "/rayfin/image" , Image , queue_size=10 )
 
 count = 0
 
-# 192.168.0.221
+# my ip 192.168.0.221
 
 while( not rospy.is_shutdown() ):
 
