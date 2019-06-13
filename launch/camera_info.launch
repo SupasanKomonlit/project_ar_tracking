@@ -3,7 +3,7 @@
 <launch>
 
     <arg name="camera_name" default="rayfin"/>
-    <arg name="yaml_file" default="$(find project_ar_tracking)/yaml/rafin_calibration.yaml"/>
+    <arg name="yaml_file" default="$(find project_ar_tracking)/yaml/rayfin_full_screen.yaml"/>
     <remap from="$(arg camera_name)/image" to="$(arg camera_name)/image_raw"/>
     <node pkg="project_ar_tracking" type="publish_camera_info.py" name="publish_camera_info"
             output="screen" respawn="true">

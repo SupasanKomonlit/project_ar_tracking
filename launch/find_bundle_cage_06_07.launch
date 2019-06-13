@@ -3,7 +3,7 @@
 <launch>
 
     <!-- ABOUT CAMERA --> 
-    <arg name="cam_image_topic" value="/rayfin/image" />
+    <arg name="cam_image_topic" value="/rayfin/image_raw" />
     <arg name="cam_info_topic" value="/rayfin/camera_info" />   
     <arg name="cam_node_name" value="rayfin_optical_frame"/>
 
